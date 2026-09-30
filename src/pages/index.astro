@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlockRenderer from '../components/BlockRenderer.astro';
+
+// Expanded JSON block list containing all your new block types
+const pageData = {
+  title: "Migrated Page from WordPress",
+  blocks: [
+    {
+      type: "hero",
+      title: "Welcome to the New Astro Site",
+      subtitle: "Lightning fast, zero client-side JavaScript by default."
+    },
+    {
+      type: "feature-grid",
+      heading: "Key Migration Benefits",
+      features: [
+        { title: "Blazing Speed", description: "Pure static HTML loads instantly without heavy framework runtimes." },
+        { title: "Zero Vulnerabilities", description: "No WordPress database or plugins to hack or maintain." },
+        { title: "SEO Optimized", description: "Perfect Lighthouse scores and strict metadata control." }
+      ]
+    },
+    {
+      type: "image-text",
+      heading: "Designed for High Conversions",
+      body: "Every pixel is replicated accurately from brand tokens while stripping away legacy technical debt.",
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Analytics dashboard preview",
+      reverse: false
+    },
+    {
+      type: "content",
+      heading: "Why Static Architecture Wins",
+      body: "By stripping out the legacy WordPress overhead and compiling down to static HTML, this site scores 90+ on Lighthouse effortlessly."
+    },
+    {
+      type: "faq",
+      heading: "Frequently Asked Questions",
+      faqs: [
+        { question: "How do we update content later?", answer: "Edits are managed via Git and Claude Code directly on the repository." },
+        { question: "Will our URLs change?", answer: "No, every single URL is mapped through a strict migration URL contract." }
+      ]
+    },
+    {
+      type: "cta",
+      title: "Ready to launch your new site?",
+      buttonText: "Approve Preview",
+      buttonUrl: "#"
+    }
+  ]
+};
+---
+
+<Layout title={pageData.title}>
+  <main style="max-width: 900px; margin: 0 auto; padding: 2rem;">
+    <BlockRenderer blocks={pageData.blocks} />
+  </main>
+</Layout>
