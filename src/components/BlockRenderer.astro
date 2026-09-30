@@ -1,0 +1,29 @@
+---
+import HeroBlock from './blocks/HeroBlock.astro';
+import ContentBlock from './blocks/ContentBlock.astro';
+import FeatureGridBlock from './blocks/FeatureGridBlock.astro';
+import CtaBlock from './blocks/CtaBlock.astro';
+import ImageTextBlock from './blocks/ImageTextBlock.astro';
+import FaqBlock from './blocks/FaqBlock.astro';
+
+const { blocks } = Astro.props;
+---
+
+{blocks.map((block) => {
+  switch (block.type) {
+    case 'hero':
+      return <HeroBlock {...block} />;
+    case 'content':
+      return <ContentBlock {...block} />;
+    case 'feature-grid':
+      return <FeatureGridBlock {...block} />;
+    case 'cta':
+      return <CtaBlock {...block} />;
+    case 'image-text':
+      return <ImageTextBlock {...block} />;
+    case 'faq':
+      return <FaqBlock {...block} />;
+    default:
+      return null;
+  }
+})}

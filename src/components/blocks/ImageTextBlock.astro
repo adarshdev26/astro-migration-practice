@@ -1,0 +1,12 @@
+---
+const { heading, body, imageUrl, imageAlt, reverse = false } = Astro.props;
+---
+<section class="image-text" style={`display: flex; flex-direction: ${reverse ? 'row-reverse' : 'row'}; align-items: center; gap: 2rem; padding: 3rem 0; flex-wrap: wrap;`}>
+  <div style="flex: 1; min-width: 280px;">
+    <img src={imageUrl} alt={imageAlt} style="width: 100%; height: auto; border-radius: 8px;" />
+  </div>
+  <div style="flex: 1; min-width: 280px;">
+    <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #27272a;">{heading}</h2>
+    <p style="color: #3f3f46; line-height: 1.6; font-size: 1.05rem;">{body}</p>
+  </div>
+</section>
